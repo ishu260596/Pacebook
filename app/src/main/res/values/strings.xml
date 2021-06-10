@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Pacebook</string>
+    <string name="create_account">Create New Pacebook Account</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="log_in">Log in</string>
+    <string name="password">Password</string>
+    <string name="email_text">Email</string>
+    <string name="enter_name">Enter Full Name</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="register">Register</string>
+    <string name="reset_password">RESET Password</string>
+    <string name="enter_your_email">Enter Your Email</string>
 </resources>
