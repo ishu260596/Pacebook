@@ -1,4 +1,4 @@
-package com.ishwar_arcore.pacebook.views;
+package com.ishwar_arcore.pacebook.views.loginandsignup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.ishwar_arcore.pacebook.R;
+import com.ishwar_arcore.pacebook.views.HomeActivity;
+import com.ishwar_arcore.pacebook.views.mainactivity.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -98,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if (user.isEmailVerified()) {
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                     } else {
                         user.sendEmailVerification();

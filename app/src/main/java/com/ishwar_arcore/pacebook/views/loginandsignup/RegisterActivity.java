@@ -1,16 +1,14 @@
-package com.ishwar_arcore.pacebook.views;
+package com.ishwar_arcore.pacebook.views.loginandsignup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaCodec;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,8 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.ishwar_arcore.pacebook.R;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth mAuth;
