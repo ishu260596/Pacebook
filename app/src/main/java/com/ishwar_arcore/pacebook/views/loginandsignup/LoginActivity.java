@@ -19,7 +19,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.ishwar_arcore.pacebook.R;
-import com.ishwar_arcore.pacebook.views.HomeActivity;
 import com.ishwar_arcore.pacebook.views.mainactivity.MainActivity;
 
 import org.jetbrains.annotations.NotNull;

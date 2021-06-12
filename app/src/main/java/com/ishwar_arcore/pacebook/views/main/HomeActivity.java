@@ -1,4 +1,4 @@
-package com.ishwar_arcore.pacebook.views;
+package com.ishwar_arcore.pacebook.views.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 

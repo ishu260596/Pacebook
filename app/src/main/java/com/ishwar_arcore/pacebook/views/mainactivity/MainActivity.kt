@@ -5,10 +5,17 @@ import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.graphics.drawable.toDrawable
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ishwar_arcore.pacebook.R
+import com.ishwar_arcore.pacebook.views.home.HomeFragment
+import com.ishwar_arcore.pacebook.views.marketplace.MarketplaceFragment
+import com.ishwar_arcore.pacebook.views.menu.MenuFragment
+import com.ishwar_arcore.pacebook.views.notification.NotificationFragment
+import com.ishwar_arcore.pacebook.views.profile.ProfileFragment
+import com.ishwar_arcore.pacebook.views.watch.WatchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +29,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewPager() {
-        viewPagerAdapter = MainViewPagerAdapter(this)
+
+        val list = arrayListOf<Fragment>(
+            HomeFragment.newInstance(),
+            WatchFragment.newInstance(),
+            MarketplaceFragment.newInstance(),
+            ProfileFragment.newInstance(),
+            NotificationFragment.newInstance(),
+            MenuFragment.newInstance()
+        )
+
+        viewPagerAdapter = MainViewPagerAdapter(this,list)
         mainViewPager.adapter = viewPagerAdapter
 
         TabLayoutMediator(mainTabLayout,mainViewPager){ tab, position ->
