@@ -39,6 +39,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-database:20.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     def jetpack_version = "2.1.0"
     def anko_version = '0.10.0'
     def arch_version = '2.2.0'
@@ -103,5 +105,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database'
+
+    //discreteScrollView
+    implementation 'com.yarolegovich:discrete-scrollview:1.5.1'
 
 }
