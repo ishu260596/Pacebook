@@ -10,7 +10,9 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/mainTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/blue"
+        app:tabIndicatorAnimationMode="linear"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/mainViewPager"
