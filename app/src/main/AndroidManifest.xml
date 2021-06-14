@@ -18,9 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.mainactivity.MainActivity"/>
+        <activity android:name=".views.mainactivity.MainActivity">
+
+        </activity>
         <activity android:name=".views.loginandsignup.ForgetPasswordActivity" />
-        <activity android:name=".views.loginandsignup.RegisterActivity" />
+        <activity android:name=".views.loginandsignup.RegisterActivity" >
+
+        </activity>
         <activity android:name=".views.loginandsignup.LoginActivity"/>
     </application>
 

@@ -23,9 +23,9 @@ import com.ishwar_arcore.pacebook.views.mainactivity.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView userRegister,forgetPassword;
+    private TextView userRegister, forgetPassword;
     private EditText editTextEmail, editTextPassword;
     private Button SignIn;
     private FirebaseAuth mAuth;
@@ -35,34 +35,36 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        userRegister=(TextView)findViewById(R.id.createAccount);
+        initViews();
+    }
+
+    private void initViews() {
+        userRegister = (TextView) findViewById(R.id.createAccount);
         userRegister.setOnClickListener(this);
 
-        SignIn=(Button)findViewById(R.id.loginText);
+        SignIn = (Button) findViewById(R.id.loginText);
         SignIn.setOnClickListener(this);
 
-        editTextEmail=(EditText)findViewById(R.id.emailText);
-        editTextPassword=(EditText) findViewById(R.id.passwordText);
+        editTextEmail = (EditText) findViewById(R.id.emailText);
+        editTextPassword = (EditText) findViewById(R.id.passwordText);
 
-        progressBar=(ProgressBar) findViewById(R.id.progressbar1);
-        mAuth=FirebaseAuth.getInstance();
+        progressBar = (ProgressBar) findViewById(R.id.progressbar1);
+        mAuth = FirebaseAuth.getInstance();
         forgetPassword = (TextView) findViewById(R.id.forgettext);
         forgetPassword.setOnClickListener(this);
-
-
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.createAccount:
-                startActivity(new Intent(this,RegisterActivity.class));
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
             case R.id.loginText:
                 UserLogin();
                 break;
             case R.id.forgettext:
-                startActivity(new Intent(this,ForgetPasswordActivity.class));
+                startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
         }
 
@@ -70,29 +72,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void UserLogin() {
         String email = editTextEmail.getText().toString().trim();
-        String password=editTextPassword.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
-        if (email.isEmpty()){
+        if (email.isEmpty()) {
             editTextEmail.setError("Email is required");
             editTextEmail.requestFocus();
             return;
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.setError("please enter valid email!");
             editTextEmail.requestFocus();
             return;
         }
-        if (password.isEmpty()){
+        if (password.isEmpty()) {
             editTextPassword.setError("Password is required!");
             editTextPassword.requestFocus();
             return;
         }
-        if (password.length()<6){
+        if (password.length() < 6) {
             editTextPassword.setError("Min password length is 6 characters!");
             return;
         }
         progressBar.setVisibility(View.GONE);
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
@@ -113,4 +115,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-    }
+}
