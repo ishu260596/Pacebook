@@ -62,12 +62,26 @@
             android:id="@+id/btnUploadDP"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:layout_marginStart="128dp"
-            android:layout_marginBottom="24dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_cameradp__1_"
             app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
-            app:layout_constraintStart_toStartOf="@+id/ivProfilePic" />
+            app:layout_constraintEnd_toEndOf="@+id/ivProfilePic"
+            app:layout_constraintStart_toBottomOf="@+id/ivCoverPhoto"
+            app:layout_constraintTop_toBottomOf="@id/ivCoverPhoto" />
+
+        <View
+            android:id="@+id/viewGreenDotProfile"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/online_green_dott"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
+            app:layout_constraintEnd_toEndOf="@+id/ivProfilePic"
+            app:layout_constraintStart_toBottomOf="@+id/ivCoverPhoto"
+            app:layout_constraintTop_toBottomOf="@id/ivCoverPhoto" />
+
 
         <TextView
             android:id="@+id/tvUserName"
