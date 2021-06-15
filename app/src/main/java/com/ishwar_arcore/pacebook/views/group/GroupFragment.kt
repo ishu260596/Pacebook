@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.ishwar_arcore.pacebook.R
 
 class GroupFragment : Fragment() {
-
+    var groupAdapter: GroupAdapter? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -17,7 +17,16 @@ class GroupFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_group, container, false)
     }
 
-    companion object{
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setRecyclerView()
+    }
+
+    private fun setRecyclerView() {
+
+    }
+
+    companion object {
         fun newInstance() = GroupFragment()
     }
 
