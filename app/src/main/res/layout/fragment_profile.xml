@@ -62,12 +62,24 @@
             android:id="@+id/btnUploadDP"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:layout_marginStart="128dp"
-            android:layout_marginBottom="24dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_cameradp__1_"
             app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
-            app:layout_constraintStart_toStartOf="@+id/ivProfilePic" />
+            app:layout_constraintEnd_toEndOf="@+id/ivProfilePic"
+            app:layout_constraintTop_toBottomOf="@id/ivCoverPhoto" />
+
+        <View
+            android:id="@+id/viewGreenDotProfile"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/online_green_dott"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
+            app:layout_constraintEnd_toEndOf="@+id/ivProfilePic"
+            app:layout_constraintTop_toBottomOf="@id/ivCoverPhoto" />
+
 
         <TextView
             android:id="@+id/tvUserName"
@@ -96,7 +108,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvUserName">
 
             <Button
-                android:id="@+id/btnAddStory"
+                android:id="@+id/btnVisitProfileRV"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_32"
                 android:layout_gravity="center_vertical"
@@ -140,10 +152,10 @@
             android:layout_marginStart="@dimen/dp_7"
             android:layout_marginTop="@dimen/dp_15"
             android:layout_marginEnd="@dimen/dp_7"
-            android:background="#C8C8FA"
+            android:background="@drawable/edit_publi_bgc"
             android:text="Edit Public Details"
             android:textAllCaps="false"
-            android:textColor="@color/blue"
+            android:textColor="@color/voilet"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSeeMore" />
@@ -167,7 +179,7 @@
             android:layout_marginTop="@dimen/dp_15"
             android:layout_marginEnd="@dimen/dp_7"
             android:text="Find Friends"
-            android:textColor="@color/blue"
+            android:textColor="@color/voilet"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnEditProfile" />
@@ -342,6 +354,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcTimeLineUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_7"

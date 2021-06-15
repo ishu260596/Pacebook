@@ -10,4 +10,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#0000FF</color>
     <color name="green">#00FF00</color>
+    <color name="voilet">#8659CB</color>
 </resources>
