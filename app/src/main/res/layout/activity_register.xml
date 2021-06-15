@@ -58,7 +58,7 @@
         android:layout_marginEnd="@dimen/dp_20"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_30"
-        android:background="@color/blue"
+        android:background="@color/voilet"
         android:padding="@dimen/dp_8"
         android:text="@string/register"
         android:textAlignment="center"

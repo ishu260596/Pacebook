@@ -9,6 +9,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/facebook_logo"/>
+        android:src="@drawable/ic_pacebook"/>
 
 </LinearLayout>

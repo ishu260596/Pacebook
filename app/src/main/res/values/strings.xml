@@ -14,4 +14,7 @@
     <string name="enter_your_email">Enter Your Email</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="post_a_status_update">Write Something here...\nयहाँ कुछ लिखें...</string>
+    <string name="create_room">Create\nRoom</string>
+    <string name="textview_thi_si_du_y_text_for_request">TextView thi si du,,y text for request TextView thi si TextView thi si TextView thi si du,,y text for request TextView thi si du,,y text for request du,,y text for request du,,y text for request</string>
 </resources>

@@ -11,12 +11,20 @@
         android:id="@+id/mainTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/blue"
-        app:tabIndicatorAnimationMode="linear"/>
+        android:background="#C3BCCD"
+        app:tabGravity="start"
+        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorColor="@color/voilet"
+        app:tabMode="auto" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/grey" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/mainViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

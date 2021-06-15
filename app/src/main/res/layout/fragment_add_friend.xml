@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.group.GroupFragment">
-
+    tools:context=".views.addfriemds.AddFriendFragment">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
-        android:text="MarketPlace"
+        android:text="Friends"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButtonSearch"
+        android:id="@+id/imageButton"
         android:layout_width="@dimen/dp_34"
         android:layout_height="@dimen/dp_34"
         android:layout_marginTop="10dp"
@@ -29,71 +28,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButtonFriend"
-        android:layout_width="@dimen/dp_34"
-        android:layout_height="@dimen/dp_34"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/round_bg"
-        android:src="@drawable/ic_baseline_person_24"
-        app:layout_constraintEnd_toStartOf="@id/imageButtonSearch"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvRequestsAddFriend"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_90"
         android:layout_height="@dimen/dp_40"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="@dimen/dp_5"
+        android:layout_marginTop="15dp"
         android:background="@drawable/status_bg"
-        android:drawableStart="@drawable/ic_baseline_add_circle_24"
         android:gravity="center"
-        android:text="Sell"
+        android:text="Requests"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_17"
-        app:layout_constraintEnd_toStartOf="@+id/tvAllFriendsAddFriend"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/tvAllFriendsAddFriend"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_100"
         android:layout_height="@dimen/dp_40"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginTop="15dp"
         android:background="@drawable/status_bg"
-        android:drawableStart="@drawable/ic_baseline_format_list_bulleted_24"
         android:gravity="center"
-        android:text="Categories"
+        android:text="All Friends"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvRequestsAddFriend"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_goneMarginStart="@dimen/dp_5" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvRequestsAddFriend"
+        app:layout_constraintStart_toEndOf="@id/tvRequestsAddFriend" />
 
     <View
-        android:id="@+id/view1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_2"
-        android:layout_margin="@dimen/dp_15"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_15"
         android:background="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAllFriendsAddFriend" />
+        app:layout_constraintTop_toBottomOf="@id/tvRequestsAddFriend" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGroups"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:layout_marginTop="@dimen/dp_15"
-        android:layout_marginEnd="@dimen/dp_10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
