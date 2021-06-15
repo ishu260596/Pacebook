@@ -196,8 +196,8 @@
 
                     <ImageButton
                         android:id="@+id/btnAddStoryHome"
-                        android:layout_width="@dimen/dp_13"
-                        android:layout_height="@dimen/dp_13"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
                         android:background="@android:color/transparent"
                         android:src="@drawable/ic_iconfinder_1343436_add_circle_download_plus_icon"
                         app:layout_constraintBottom_toTopOf="@+id/tvAddStoryHome"
