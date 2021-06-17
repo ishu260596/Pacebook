@@ -136,6 +136,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             userMap.put("dob", "26-05-1996");
                             userMap.put("relationship", "single");
                             userMap.put("othername", "Ishu");
+                            userMap.put("profileimage", "single");
+                            userMap.put("coverimage", "Ishu");
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
