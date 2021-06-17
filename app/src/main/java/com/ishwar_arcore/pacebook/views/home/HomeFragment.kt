@@ -1,15 +1,19 @@
 package com.ishwar_arcore.pacebook.views.home
 
-import android.app.ActionBar
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
 import com.ishwar_arcore.pacebook.R
+import com.ishwar_arcore.pacebook.views.loginandsignup.LoginActivity
+import com.ishwar_arcore.pacebook.views.loginandsignup.RegisterActivity
 import com.ishwar_arcore.pacebook.views.mainactivity.MainActivity
 
 class HomeFragment : Fragment() {
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,7 +25,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getActionBar()?.setTitle("Pacebook")
+        getActionBar()?.title = "Pacebook"
+        firebaseAuth = FirebaseAuth.getInstance()
+    }
+
+
+    private fun redirect() {
+        val mainIntent = Intent(activity, LoginActivity::class.java)
+        startActivity(mainIntent)
     }
 
     @JvmName("getActionBar1")

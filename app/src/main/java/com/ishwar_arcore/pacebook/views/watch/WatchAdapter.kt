@@ -1,18 +1,19 @@
 package com.ishwar_arcore.pacebook.views.watch
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ishwar_arcore.pacebook.R
 
 class WatchAdapter() : RecyclerView.Adapter<WatchAdapter.WatchViewHolder>() {
 
 
-    inner class WatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WatchViewHolder {
-        TODO("Not yet implemented")
+        val view =
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.user_profile_timeline_item_layout_photo, parent, false)
+        return WatchViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: WatchViewHolder, position: Int) {
@@ -21,5 +22,10 @@ class WatchAdapter() : RecyclerView.Adapter<WatchAdapter.WatchViewHolder>() {
 
     override fun getItemCount(): Int {
         TODO("Not yet implemented")
+    }
+
+
+    inner class WatchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
     }
 }

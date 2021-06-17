@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.addfriemds.AddFriendFragment">
+    tools:context=".views.addfriends.AddFriendFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -30,7 +30,7 @@
 
 
     <TextView
-        android:id="@+id/tvRequestsAddFriend"
+        android:id="@+id/tvSell"
         android:layout_width="@dimen/dp_90"
         android:layout_height="@dimen/dp_40"
         android:layout_marginStart="10dp"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/tvAllFriendsAddFriend"
+        android:id="@+id/tvCategoriesMarket"
         android:layout_width="@dimen/dp_100"
         android:layout_height="@dimen/dp_40"
         android:layout_marginStart="5dp"
@@ -54,8 +54,8 @@
         android:text="All Friends"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_17"
-        app:layout_constraintBottom_toBottomOf="@+id/tvRequestsAddFriend"
-        app:layout_constraintStart_toEndOf="@id/tvRequestsAddFriend" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvSell"
+        app:layout_constraintStart_toEndOf="@id/tvSell" />
 
     <View
         android:layout_width="match_parent"
@@ -64,7 +64,7 @@
         android:background="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvRequestsAddFriend" />
+        app:layout_constraintTop_toBottomOf="@id/tvSell" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

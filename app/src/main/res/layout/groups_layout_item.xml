@@ -10,7 +10,9 @@
         android:id="@+id/cardView"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_margin="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
         android:elevation="@dimen/dp_10"
         app:cardCornerRadius="@dimen/dp_5"
         app:cardElevation="@dimen/dp_10"
@@ -18,10 +20,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/ivGroup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/son" />
+            android:layout_margin="@dimen/dp_2"
+            android:scaleType="fitXY" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -54,7 +57,7 @@
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_12"
         android:layout_marginEnd="@dimen/dp_5"
         android:text="Full Stack Android Developer"
         android:textColor="@color/black"
@@ -75,6 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvGroupName" />
 
     <TextView
+        android:id="@+id/tvPosts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_5"

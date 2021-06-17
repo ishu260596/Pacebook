@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ishwar_arcore.pacebook.R
-import com.ishwar_arcore.pacebook.views.addfriemds.AddFriendFragment
+import com.ishwar_arcore.pacebook.views.addfriends.AddFriendFragment
 import com.ishwar_arcore.pacebook.views.group.GroupFragment
 import com.ishwar_arcore.pacebook.views.home.HomeFragment
 import com.ishwar_arcore.pacebook.views.marketplace.MarketplaceFragment

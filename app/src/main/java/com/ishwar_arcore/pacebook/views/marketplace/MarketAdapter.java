@@ -12,9 +12,9 @@ import com.ishwar_arcore.pacebook.R;
 import java.util.ArrayList;
 
 public class MarketAdapter extends RecyclerView.Adapter<MarketViewHolder> {
-    private ArrayList<Model> cardList;
+    private ArrayList<MarketPlaceModel> cardList;
 
-    public MarketAdapter(ArrayList<Model> cardList, MarketplaceFragment marketplaceFragment) {
+    public MarketAdapter(ArrayList<MarketPlaceModel> cardList, MarketplaceFragment marketplaceFragment) {
         this.cardList = cardList;
     }
 
@@ -27,8 +27,8 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MarketViewHolder holder, int position) {
-        Model model=cardList.get(position);
-        holder.setData(model);
+        MarketPlaceModel marketPlaceModel =cardList.get(position);
+        holder.setData(marketPlaceModel);
     }
 
     @Override

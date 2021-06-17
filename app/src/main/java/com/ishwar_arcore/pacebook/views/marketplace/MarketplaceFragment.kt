@@ -10,42 +10,114 @@ import com.ishwar_arcore.pacebook.R
 import kotlinx.android.synthetic.main.fragment_marketplace.*
 
 class MarketplaceFragment : Fragment() {
-
+    val marketPlaceModels: ArrayList<MarketPlaceModel> = ArrayList()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_marketplace, container, false)
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val models: ArrayList<Model> = ArrayList()
 
         for (i in 0..49) {
-            models.add(Model("₹1000", R.drawable.lipstick))
-            models.add(Model("₹500", R.drawable.bangle3))
-            models.add(Model("₹700", R.drawable.lahnga2))
-            models.add(Model("₹900", R.drawable.ic_lahnga1))
-            models.add(Model("₹100", R.drawable.bangles))
-            models.add(Model("₹200", R.drawable.saree))
-            models.add(Model("₹800", R.drawable.bagsecond))
-            models.add(Model("₹900", R.drawable.top5))
-            models.add(Model("₹200", R.drawable.top7_1))
-            models.add(Model("₹400", R.drawable.watch1))
-            models.add(Model("₹3000", R.drawable.watch2))
-            models.add(Model("₹500", R.drawable.straitner))
-            models.add(Model("₹600", R.drawable.pandent))
-            models.add(Model("₹1200", R.drawable.headphone))
-            models.add(Model("₹1500", R.drawable.earing))
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹1000",
+                    R.drawable.lipstick
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹500",
+                    R.drawable.bangle3
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹700",
+                    R.drawable.lahnga2
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹900",
+                    R.drawable.ic_lahnga1
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹100",
+                    R.drawable.bangles
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹200",
+                    R.drawable.saree
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹800",
+                    R.drawable.bagsecond
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹900",
+                    R.drawable.top5
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹200",
+                    R.drawable.top7_1
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹400",
+                    R.drawable.watch1
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹3000",
+                    R.drawable.watch2
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹500",
+                    R.drawable.straitner
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹600",
+                    R.drawable.pandent
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹1200",
+                    R.drawable.headphone
+                )
+            )
+            marketPlaceModels.add(
+                MarketPlaceModel(
+                    "₹1500",
+                    R.drawable.earing
+                )
+            )
         }
-        rvGroups.layoutManager = GridLayoutManager(context,2)
-        rvGroups.adapter = MarketAdapter(models, this)
+
+        rvMarketPlace.layoutManager = GridLayoutManager(context, 2)
+        rvMarketPlace.adapter = MarketAdapter(marketPlaceModels, this)
+        rvMarketPlace.hasFixedSize()
     }
-
-
-
 
 
     companion object {

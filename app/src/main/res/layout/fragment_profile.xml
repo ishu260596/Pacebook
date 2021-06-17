@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
 
         <com.ishwar_arcore.pacebook.utils.RoundRectCornerImageView
-            android:id="@+id/ivCoverPhoto"
+            android:id="@+id/ivCoverPhotoUser"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:layout_margin="@dimen/dp_10"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivProfilePic"
+            android:id="@+id/ivProfilePicUser"
             android:layout_width="150dp"
             android:layout_height="151dp"
             android:layout_marginTop="100dp"
@@ -64,9 +64,10 @@
             android:layout_height="34dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_cameradp__1_"
-            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
-            app:layout_constraintEnd_toEndOf="@+id/ivProfilePic"
-            app:layout_constraintTop_toBottomOf="@id/ivCoverPhoto" />
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePicUser"
+            app:layout_constraintEnd_toEndOf="@+id/ivProfilePicUser"
+            app:layout_constraintTop_toBottomOf="@id/ivCoverPhotoUser" />
+
 
         <View
             android:id="@+id/viewGreenDotProfile"
@@ -75,10 +76,10 @@
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginEnd="@dimen/dp_10"
             android:background="@drawable/online_green_dott"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePic"
-            app:layout_constraintEnd_toEndOf="@+id/ivProfilePic"
-            app:layout_constraintTop_toBottomOf="@id/ivCoverPhoto" />
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePicUser"
+            app:layout_constraintEnd_toEndOf="@+id/ivProfilePicUser"
+            app:layout_constraintTop_toBottomOf="@id/ivCoverPhotoUser" />
 
 
         <TextView
@@ -90,10 +91,10 @@
             android:text="Spartans 2"
             android:textColor="@color/black"
             android:textSize="@dimen/dp_20"
-            app:layout_constraintEnd_toEndOf="@id/ivProfilePic"
+            app:layout_constraintEnd_toEndOf="@id/ivProfilePicUser"
             app:layout_constraintHorizontal_bias="0.529"
-            app:layout_constraintStart_toStartOf="@+id/ivProfilePic"
-            app:layout_constraintTop_toBottomOf="@id/ivProfilePic" />
+            app:layout_constraintStart_toStartOf="@+id/ivProfilePicUser"
+            app:layout_constraintTop_toBottomOf="@id/ivProfilePicUser" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -361,6 +362,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <ImageButton
+            android:id="@+id/btnUploadCoverImage"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:visibility="invisible"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_cameradp__1_"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCoverPhotoUser"
+            app:layout_constraintEnd_toEndOf="@+id/ivCoverPhotoUser" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

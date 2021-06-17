@@ -12,7 +12,7 @@ import com.ishwar_arcore.pacebook.R;
 public class MarketViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView mIvPhoto;
-    private TextView textprice;
+    private TextView mTextPrice;
 
     public MarketViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -20,13 +20,13 @@ public class MarketViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void initViews(View itemView) {
-        mIvPhoto=itemView.findViewById(R.id.rvlipstic);
-        textprice=itemView.findViewById(R.id.tvprice);
+        mIvPhoto = itemView.findViewById(R.id.rvlipstic);
+        mTextPrice = itemView.findViewById(R.id.tvprice);
 
     }
-    public void setData(Model model) {
-        mIvPhoto.setImageResource(model.getImage());
-        textprice.setText(model.getPrice());
 
+    public void setData(MarketPlaceModel marketPlaceModel) {
+        mIvPhoto.setImageResource(marketPlaceModel.getImage());
+        mTextPrice.setText(marketPlaceModel.getPrice());
     }
 }
