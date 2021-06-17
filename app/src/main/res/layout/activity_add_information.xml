@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_back"
+            android:padding="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_btn" />
+        <TextView
+            android:id="@+id/etAbout"
+            android:layout_width="wrap_content"
+            android:text="About"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/black"
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@+id/btn_back"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_back" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/grey"
+            android:layout_below="@id/etAbout" />
+        <TextView
+            android:id="@+id/etwork"
+            android:layout_width="wrap_content"
+            android:text="Work"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/view"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/btn_location"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/etwork"
+            android:src="@drawable/work"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddWork"
+            android:layout_width="wrap_content"
+            android:text="Add Work Experience"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/etwork"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <TextView
+            android:id="@+id/tvEducation"
+            android:layout_width="wrap_content"
+            android:text="Education"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/tvAddWork"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivEducation"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/tvEducation"
+            android:src="@drawable/college"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddCollege"
+            android:layout_width="wrap_content"
+            android:text="Add College"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/tvEducation"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddCollege" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivSchool"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/view2"
+            android:src="@drawable/school"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddHighSchool"
+            android:layout_width="wrap_content"
+            android:text="Add High School"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/view2"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="20dp"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddHighSchool" />
+        <TextView
+            android:id="@+id/tvPlaces"
+            android:layout_width="wrap_content"
+            android:text="Places Lived"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/view3"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivPlaces"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/tvPlaces"
+            android:src="@drawable/college"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddCity"
+            android:layout_width="wrap_content"
+            android:text="Add City"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/tvPlaces"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="22dp"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddCity" />
+        <TextView
+            android:id="@+id/tvContactInfo"
+            android:layout_width="wrap_content"
+            android:text="Contact Info"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/view4"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivCall"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/tvContactInfo"
+            android:src="@drawable/phone"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddNumber"
+            android:layout_width="wrap_content"
+            android:text="Add Mobile Number"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/tvContactInfo"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddNumber" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivEmail"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/view5"
+            android:src="@drawable/email"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddEmail"
+            android:layout_width="wrap_content"
+            android:text="Add Email"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/view5"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="20dp"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddEmail" />
+        <TextView
+            android:id="@+id/tvBasicInfo"
+            android:layout_width="wrap_content"
+            android:text="Basic Info"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_below="@+id/view6"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivGender"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/tvBasicInfo"
+            android:src="@drawable/person"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddGender"
+            android:layout_width="wrap_content"
+            android:text="Add Gender"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/tvBasicInfo"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view7"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddGender" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivBirthday"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/view7"
+            android:src="@drawable/birthday"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddBirthday"
+            android:layout_width="wrap_content"
+            android:text="Add Birthday"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/view7"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+        <View
+            android:id="@+id/view8"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/grey"
+            android:layout_below="@id/tvAddBirthday" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:id="@+id/ivLanguage"
+            android:padding="@dimen/dp_10"
+            android:foregroundGravity="center"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_below="@+id/view8"
+            android:src="@drawable/language"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10" />
+        <TextView
+            android:id="@+id/tvAddLanguage"
+            android:layout_width="wrap_content"
+            android:text="Add Language"
+            android:layout_toEndOf="@+id/btn_location"
+            android:layout_marginStart="@dimen/dp_10"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/blue"
+            android:layout_below="@+id/view8"
+            android:layout_marginTop="22dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/btn_location" />
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

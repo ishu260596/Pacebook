@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.addfriemds.SearchActivity">
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:id="@+id/btn_back"-->
+<!--        android:padding="@dimen/dp_10"-->
+<!--        android:foregroundGravity="center"-->
+<!--        android:layout_height="@dimen/dp_50"-->
+<!--        android:background="@drawable/back_btn" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/SearchFriend"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_marginTop="@dimen/dp_10"-->
+<!--        android:layout_marginStart="@dimen/dp_70"-->
+<!--        android:layout_marginEnd="@dimen/dp_70"-->
+<!--        android:padding="@dimen/dp_4"-->
+<!--        android:hint="Search"-->
+<!--        android:background="@drawable/search_draw"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/searchOneButton"-->
+<!--        android:layout_width="@dimen/dp_34"-->
+<!--        android:layout_height="@dimen/dp_34"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginStart="300dp"-->
+<!--        android:background="@drawable/round_bg"-->
+<!--        android:src="@drawable/ic_baseline_search_24" />-->
+
+<!--    <View-->
+<!--        android:id="@+id/view8"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dp_2"-->
+<!--        android:layout_marginTop="@dimen/dp_15"-->
+<!--        android:background="@color/grey"-->
+<!--        android:layout_below="@id/SearchFriend"/>-->
+
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+
+    android:id="@+id/searchrecyclerView"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_height="match_parent"/>
+</RelativeLayout>
