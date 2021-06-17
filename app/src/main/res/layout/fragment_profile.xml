@@ -31,12 +31,11 @@
             android:id="@+id/ivProfilePicUser"
             android:layout_width="150dp"
             android:layout_height="151dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="90dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_user_1"
             app:civ_border_width="1dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,21 +61,10 @@
             android:id="@+id/btnUploadDP"
             android:layout_width="34dp"
             android:layout_height="34dp"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_5"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_cameradp__1_"
-            app:layout_constraintBottom_toBottomOf="@+id/ivProfilePicUser"
-            app:layout_constraintEnd_toEndOf="@+id/ivProfilePicUser"
-            app:layout_constraintTop_toBottomOf="@id/ivCoverPhotoUser" />
-
-
-        <View
-            android:id="@+id/viewGreenDotProfile"
-            android:layout_width="@dimen/dp_10"
-            android:layout_height="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_5"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:background="@drawable/online_green_dott"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/ivProfilePicUser"
             app:layout_constraintEnd_toEndOf="@+id/ivProfilePicUser"
             app:layout_constraintTop_toBottomOf="@id/ivCoverPhotoUser" />
@@ -367,11 +355,11 @@
             android:id="@+id/btnUploadCoverImage"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:layout_marginEnd="@dimen/dp_5"
-            android:layout_marginBottom="@dimen/dp_5"
-            android:visibility="invisible"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_cameradp__1_"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/ivCoverPhotoUser"
             app:layout_constraintEnd_toEndOf="@+id/ivCoverPhotoUser" />
 

@@ -122,11 +122,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     } else {
                         user.sendEmailVerification();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
                         Toast.makeText(LoginActivity.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();
 
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "Faild to login please check your credentials", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Failed to login please check your credentials", Toast.LENGTH_LONG).show();
 
                 }
             }
