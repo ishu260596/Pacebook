@@ -1,16 +1,16 @@
 package com.ishwar_arcore.pacebook.views.mainactivity
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ishwar_arcore.pacebook.R
-import com.ishwar_arcore.pacebook.views.addfriemds.AddFriendFragment
+import com.ishwar_arcore.pacebook.views.addfriends.AddFriendFragment
+import com.ishwar_arcore.pacebook.views.group.GroupFragment
 import com.ishwar_arcore.pacebook.views.home.HomeFragment
 import com.ishwar_arcore.pacebook.views.marketplace.MarketplaceFragment
-import com.ishwar_arcore.pacebook.views.group.GroupFragment
 import com.ishwar_arcore.pacebook.views.menu.MenuFragment
 import com.ishwar_arcore.pacebook.views.notification.NotificationFragment
 import com.ishwar_arcore.pacebook.views.profile.ProfileFragment
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initViewPager()
+        setActionBarTitle("Pacebook")
     }
 
     private fun initViewPager() {
@@ -58,5 +59,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         }.attach()
+    }
+
+    private fun setActionBarTitle(title: String?) {
+        supportActionBar?.setTitle(title)
     }
 }

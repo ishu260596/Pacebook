@@ -39,6 +39,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initViews() {
+        mAuth = FirebaseAuth.getInstance();
+
         userRegister = (TextView) findViewById(R.id.createAccount);
         userRegister.setOnClickListener(this);
 
@@ -49,9 +51,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editTextPassword = (EditText) findViewById(R.id.passwordText);
 
         progressBar = (ProgressBar) findViewById(R.id.progressbar1);
-        mAuth = FirebaseAuth.getInstance();
         forgetPassword = (TextView) findViewById(R.id.forgettext);
         forgetPassword.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            redirect();
+        }
+
+    }
+
+    private void redirect() {
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
     }
 
     @Override
@@ -102,6 +118,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     if (user.isEmailVerified()) {
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
 
                     } else {
                         user.sendEmailVerification();
@@ -116,3 +133,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 }
+
+
+//    // Create a reference with an initial file path and name
+//    StorageReference pathReference = storageRef.child("images/stars.jpg");
+//
+//    // Create a reference to a file from a Cloud Storage URI
+//    StorageReference gsReference = storage.getReferenceFromUrl("gs://bucket/images/stars.jpg");
+//
+//    // Create a reference from an HTTPS URL
+//// Note that in the URL, characters are URL escaped!
+//    StorageReference httpsReference = storage.getReferenceFromUrl("https://firebasestorage.googleapis.com/b/bucket/o/images%20stars.jpg");
