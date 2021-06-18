@@ -13,7 +13,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.firebase.ui.database.FirebaseRecyclerAdapter
+import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -22,6 +26,8 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import com.ishwar_arcore.pacebook.R
 import com.ishwar_arcore.pacebook.views.addposts.ChoosePostActivity
+import com.ishwar_arcore.pacebook.views.home.HomeFragment
+import com.ishwar_arcore.pacebook.views.home.PostModel
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
@@ -39,7 +45,9 @@ class ProfileFragment : Fragment() {
     private lateinit var ivProfilePicSmall: CircleImageView
     private lateinit var coverImg: ImageView
     private lateinit var tvAddCoverPhoto: TextView
-
+    private lateinit var rcTimeLineUser: RecyclerView
+    private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var postAdapter: FirebaseRecyclerAdapter<PostModel, ProfileFragment.PostViewHolder?>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -106,8 +114,101 @@ class ProfileFragment : Fragment() {
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
             }
         }
+
         databaseRef.addValueEventListener(postListener)
+        displayAllPosts()
     }
+
+    private fun displayAllPosts() {
+        val query = FirebaseDatabase.getInstance()
+            .reference
+            .child("UploadPosts")
+
+        val options: FirebaseRecyclerOptions<PostModel> =
+            FirebaseRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel::class.java)
+                .build()
+
+        postAdapter =
+            object : FirebaseRecyclerAdapter<PostModel, ProfileFragment.PostViewHolder?>(options) {
+                override fun onCreateViewHolder(
+                    parent: ViewGroup,
+                    viewType: Int
+                ): ProfileFragment.PostViewHolder {
+
+                    val view: View = LayoutInflater.from(parent.context)
+                        .inflate(
+                            com.ishwar_arcore.pacebook.R.layout.user_profile_timeline_item_layout_photo,
+                            parent,
+                            false
+                        )
+                    return PostViewHolder(view)
+                }
+
+                override fun onBindViewHolder(
+                    holder: ProfileFragment.PostViewHolder,
+                    position: Int,
+                    model: PostModel
+                ) {
+                    holder.setData(model)
+                }
+            }
+
+        rcTimeLineUser.layoutManager = linearLayoutManager
+        rcTimeLineUser.adapter = postAdapter
+
+    }
+
+
+    inner class PostViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+        lateinit var circleImageViewRv: CircleImageView
+        lateinit var postImage: ImageView
+        lateinit var useName: TextView
+        lateinit var postData: TextView
+        lateinit var description11: TextView
+
+        fun setData(model: PostModel) {
+            view.apply {
+                circleImageViewRv =
+                    view.findViewById(com.ishwar_arcore.pacebook.R.id.ivProfilePicSmallRv11)
+                postImage = view.findViewById(com.ishwar_arcore.pacebook.R.id.tvPostImgRv11)
+                useName = view.findViewById(com.ishwar_arcore.pacebook.R.id.tvUserNameRv11)
+                postData = view.findViewById(com.ishwar_arcore.pacebook.R.id.tvPostDateRv11)
+                description11 = view.findViewById(com.ishwar_arcore.pacebook.R.id.description11)
+
+                Glide.with(postImage).load(model.postimage)
+                    .placeholder(R.drawable.ic_user_1)
+                    .into(postImage)
+
+                Glide.with(circleImageViewRv).load(model.profileimage)
+                    .placeholder(R.drawable.ic_user_1)
+                    .into(circleImageViewRv)
+
+                model.username?.let {
+                    useName.text = model.username
+                }
+                model.date?.let {
+                    postData.text = model.date
+                }
+                model.description?.let {
+                    description11.text = model.description
+                }
+
+            }
+        }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        postAdapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        postAdapter.stopListening()
+    }
+
 
     private fun initViews(view: View) {
         mAuth = FirebaseAuth.getInstance()
@@ -120,6 +221,8 @@ class ProfileFragment : Fragment() {
         coverImg = view.findViewById(R.id.ivCoverPhotoUser)
         tvAddCoverPhoto = view.findViewById(R.id.tvCoverPhoto)
         ivProfilePicSmall = view.findViewById(R.id.ivProfilePicSmall);
+        rcTimeLineUser = view.findViewById(com.ishwar_arcore.pacebook.R.id.rcTimeLineUser)
+        linearLayoutManager = LinearLayoutManager(context)
 
     }
 

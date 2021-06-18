@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,11 +16,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.ishwar_arcore.pacebook.R
 import com.ishwar_arcore.pacebook.views.addposts.ChoosePostActivity
 import com.ishwar_arcore.pacebook.views.mainactivity.MainActivity
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.fragment_home.view.*
-import kotlinx.android.synthetic.main.user_profile_timeline_item_layout_photo.*
 
 
 class HomeFragment : Fragment() {
@@ -27,9 +29,10 @@ class HomeFragment : Fragment() {
     private lateinit var userId: String
 
     private lateinit var profileImg: CircleImageView
+    private lateinit var storyAvatar: ImageView
     private lateinit var rvPostsHome: RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var postAdapter: FirebaseRecyclerAdapter<PostModelJava, PostViewHolder?>
+    private lateinit var postAdapter: FirebaseRecyclerAdapter<PostModel, PostViewHolder?>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,6 +56,11 @@ class HomeFragment : Fragment() {
                         Glide.with(profileImg).load(profileImage)
                             .placeholder(com.ishwar_arcore.pacebook.R.drawable.ic_user_1)
                             .into(profileImg)
+
+                        Glide.with(storyAvatar).load(profileImage)
+                            .placeholder(com.ishwar_arcore.pacebook.R.drawable.ic_user_1)
+                            .into(storyAvatar)
+
                     }
                 }
             }
@@ -101,12 +109,12 @@ class HomeFragment : Fragment() {
             .reference
             .child("UploadPosts")
 
-        val options: FirebaseRecyclerOptions<PostModelJava> =
-            FirebaseRecyclerOptions.Builder<PostModelJava>()
-                .setQuery(query, PostModelJava::class.java)
+        val options: FirebaseRecyclerOptions<PostModel> =
+            FirebaseRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel::class.java)
                 .build()
 
-        postAdapter = object : FirebaseRecyclerAdapter<PostModelJava, PostViewHolder?>(options) {
+        postAdapter = object : FirebaseRecyclerAdapter<PostModel, PostViewHolder?>(options) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
 
                 val view: View = LayoutInflater.from(parent.context)
@@ -121,11 +129,27 @@ class HomeFragment : Fragment() {
             override fun onBindViewHolder(
                 holder: PostViewHolder,
                 position: Int,
-                model: PostModelJava
+                model: PostModel
             ) {
+
+                /**  Glide.with(holder.postImage).load(model.postimage)
+                .placeholder(R.drawable.ic_user_1)
+                .into(holder.postImage)
+
+                Glide.with(holder.circleImageViewRv).load(model.profileimage)
+                .placeholder(R.drawable.ic_user_1)
+                .into(holder.circleImageViewRv)
+
+                model.username?.let {
+                holder.useName.text = model.username
+                }
+                model.date?.let {
+                holder.postData.text = model.date
+                }**/
                 holder.setData(model)
             }
         }
+
         rvPostsHome.layoutManager = linearLayoutManager
         rvPostsHome.adapter = postAdapter
 
@@ -142,16 +166,39 @@ class HomeFragment : Fragment() {
     }
 
     inner class PostViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        fun setData(model: PostModelJava) {
+        lateinit var circleImageViewRv: CircleImageView
+        lateinit var postImage: ImageView
+        lateinit var useName: TextView
+        lateinit var postData: TextView
+        lateinit var description11: TextView
+
+        fun setData(model: PostModel) {
             view.apply {
-                Glide.with(ivProfilePicSmallRv).load(model.profileimage)
-                    .placeholder(com.ishwar_arcore.pacebook.R.drawable.ic_user_1)
-                    .into(ivProfilePicSmallRv)
-                Glide.with(tvStatusRv).load(model.postimage)
-                    .placeholder(com.ishwar_arcore.pacebook.R.drawable.ic_user_1)
-                    .into(tvStatusRv)
-                tvUserNameRv.text = model.username
-                tvPostDateRv.text = model.date
+                circleImageViewRv =
+                    view.findViewById(com.ishwar_arcore.pacebook.R.id.ivProfilePicSmallRv11)
+                postImage = view.findViewById(com.ishwar_arcore.pacebook.R.id.tvPostImgRv11)
+                useName = view.findViewById(com.ishwar_arcore.pacebook.R.id.tvUserNameRv11)
+                postData = view.findViewById(com.ishwar_arcore.pacebook.R.id.tvPostDateRv11)
+                description11 = view.findViewById(com.ishwar_arcore.pacebook.R.id.description11)
+
+                Glide.with(postImage).load(model.postimage)
+                    .placeholder(R.drawable.ic_user_1)
+                    .into(postImage)
+
+                Glide.with(circleImageViewRv).load(model.profileimage)
+                    .placeholder(R.drawable.ic_user_1)
+                    .into(circleImageViewRv)
+
+                model.username?.let {
+                    useName.text = model.username
+                }
+                model.date?.let {
+                    postData.text = model.date
+                }
+                model.description?.let {
+                    description11.text = model.description
+                }
+
             }
         }
 
@@ -162,7 +209,8 @@ class HomeFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
         userId = mAuth.currentUser?.uid.toString()
         profileImg = view.findViewById(com.ishwar_arcore.pacebook.R.id.ivProfilePicHome)
-        userRef = FirebaseDatabase.getInstance().reference.child("Users")
+        storyAvatar = view.findViewById(R.id.storyAvatar)
+        userRef = FirebaseDatabase.getInstance().reference.child("Users").child(userId)
         linearLayoutManager = LinearLayoutManager(context)
     }
 
@@ -196,5 +244,6 @@ class HomeFragment : Fragment() {
 
     companion object {
         fun newInstance() = HomeFragment()
+
     }
 }

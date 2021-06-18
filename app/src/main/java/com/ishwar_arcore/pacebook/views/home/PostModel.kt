@@ -4,11 +4,13 @@ import com.ishwar_arcore.pacebook.utils.NoArg
 
 @NoArg
 data class PostModel(
-    val date: String,
-    val description: String,
-    val postimage: String,
-    val profileimage: String,
-    val time: String,
-    val uid: String,
-    val username: String
-)
+    val date: String? = null,
+    val description: String? = null,
+    val postimage: String? = null,
+    val profileimage: String? = null,
+    val time: String? = null,
+    val uid: String? = null,
+    val username: String? = null
+) {
+
+}
