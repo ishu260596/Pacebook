@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.addposts.CreatePostFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfilePicSmallCreatePost"
+        android:layout_width="@dimen/dp_42"
+        android:layout_height="42dp"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_weight="0.2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_user_1"
+        app:civ_border_width=".5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/nameCreatePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="Akshay"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_17"
+        app:layout_constraintStart_toEndOf="@+id/ivProfilePicSmallCreatePost"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ETWriteHere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/white"
+        android:gravity="fill_vertical"
+        android:hint="What's on your mind?"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameCreatePost" />
+
+    <Button
+        android:id="@+id/PostButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@color/voilet"
+        android:text="post"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/SeeMoreButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_iconfinder_7124112_circle_dots_horizontal_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CheckInButton" />
+
+    <ImageButton
+        android:id="@+id/CheckInButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_iconfinder_2701087_checkin_friends_location_near_pin_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SeeMoreButton"
+        app:layout_constraintStart_toEndOf="@+id/EmotionsButton" />
+
+    <ImageButton
+        android:id="@+id/EmotionsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:drawablePadding="@dimen/dp_10"
+        android:src="@drawable/ic_iconfinder_4927962_emoji_emotion_face_feeling_smile_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/CheckInButton"
+        app:layout_constraintStart_toEndOf="@+id/tagPeopleButton" />
+
+    <ImageButton
+        android:id="@+id/tagPeopleButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_iconfinder_299085_profile_group_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/EmotionsButton"
+        app:layout_constraintStart_toEndOf="@+id/postVideosPhotosButton" />
+
+    <ImageButton
+        android:id="@+id/postVideosPhotosButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:drawablePadding="@dimen/dp_10"
+        android:src="@drawable/ic_iconfinder_3298594_asset_image_photo_picture_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tagPeopleButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/chooseImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintBottom_toTopOf="@id/viewOne"
+        app:layout_constraintTop_toBottomOf="@+id/ETWriteHere" />
+
+    <View
+        android:id="@+id/viewOne"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/EmotionsButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCreatePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

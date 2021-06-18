@@ -1,5 +1,6 @@
 package com.ishwar_arcore.pacebook.views.profile
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -20,6 +21,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import com.ishwar_arcore.pacebook.R
+import com.ishwar_arcore.pacebook.views.addposts.ChoosePostActivity
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
@@ -34,6 +36,7 @@ class ProfileFragment : Fragment() {
     private lateinit var coverPicRef: StorageReference
 
     private lateinit var profileImg: CircleImageView
+    private lateinit var ivProfilePicSmall: CircleImageView
     private lateinit var coverImg: ImageView
     private lateinit var tvAddCoverPhoto: TextView
 
@@ -53,7 +56,6 @@ class ProfileFragment : Fragment() {
         view.apply {
             btnUploadDP.setOnClickListener {
                 getContent1.launch("image/*")
-
             }
             tvCoverPhoto.setOnClickListener {
                 getContent2.launch("image/*")
@@ -67,6 +69,10 @@ class ProfileFragment : Fragment() {
             profileImg.setOnClickListener {
                 getContent1.launch("image/*")
             }
+            etWriteStatus.setOnClickListener {
+                val intent = Intent(requireActivity(), ChoosePostActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         val postListener = object : ValueEventListener {
@@ -77,8 +83,10 @@ class ProfileFragment : Fragment() {
                         Glide.with(profileImg).load(profileImageURL)
                             .placeholder(R.drawable.ic_user_1)
                             .into(profileImg)
+                        Glide.with(ivProfilePicSmall).load(profileImageURL)
+                            .placeholder(R.drawable.ic_user_1)
+                            .into(ivProfilePicSmall)
                     }
-
                     if (dataSnapshot.hasChild("coverimage1")) {
                         val coverImageURL = dataSnapshot.child("coverimage1").value.toString()
                         Glide.with(coverImg).load(coverImageURL)
@@ -87,10 +95,10 @@ class ProfileFragment : Fragment() {
                         tvCoverPhoto.visibility = View.GONE
                         btnUploadCoverImage.visibility = View.VISIBLE
                     }
-
-                    val name = dataSnapshot.child("username").value.toString()
-                    tvUserName.text = name
-
+                    if (dataSnapshot.hasChild("username")) {
+                        val name = dataSnapshot.child("username").value.toString()
+                        tvUserName.text = name
+                    }
                 }
             }
 
@@ -111,6 +119,7 @@ class ProfileFragment : Fragment() {
         profileImg = view.findViewById(R.id.ivProfilePicUser)
         coverImg = view.findViewById(R.id.ivCoverPhotoUser)
         tvAddCoverPhoto = view.findViewById(R.id.tvCoverPhoto)
+        ivProfilePicSmall = view.findViewById(R.id.ivProfilePicSmall);
 
     }
 
@@ -155,6 +164,41 @@ class ProfileFragment : Fragment() {
                 })
             }
         }
+
+    override fun onResume() {
+        super.onResume()
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    if (dataSnapshot.hasChild("profileimage1")) {
+                        val profileImageURL = dataSnapshot.child("profileimage1").value.toString()
+                        Glide.with(profileImg).load(profileImageURL)
+                            .placeholder(R.drawable.ic_user_1)
+                            .into(profileImg)
+                    }
+
+                    if (dataSnapshot.hasChild("coverimage1")) {
+                        val coverImageURL = dataSnapshot.child("coverimage1").value.toString()
+                        Glide.with(coverImg).load(coverImageURL)
+                            .placeholder(R.drawable.ic_rectangle_3)
+                            .into(coverImg)
+                        tvCoverPhoto.visibility = View.GONE
+                        btnUploadCoverImage.visibility = View.VISIBLE
+                    }
+
+                    val name = dataSnapshot.child("username").value.toString()
+                    tvUserName.text = name
+
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+            }
+        }
+        databaseRef.addValueEventListener(postListener)
+
+    }
 
     companion object {
         fun newInstance() = ProfileFragment()

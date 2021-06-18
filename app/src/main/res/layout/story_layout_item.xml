@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/btnVisitProfileRV"
+            android:id="@+id/btnAddToStory"
             android:layout_width="@dimen/dp_24"
             android:layout_height="@dimen/dp_24"
             android:layout_marginStart="@dimen/dp_10"

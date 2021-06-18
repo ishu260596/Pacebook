@@ -18,11 +18,11 @@ class PostAdapter() :
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return 5
     }
 
     inner class PostViewHolder(view: View) : RecyclerView.ViewHolder(view) {

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.addposts.ChoosePostActivity">
+
+    <TextView
+        android:id="@+id/tvNamePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_50"
+        android:text="Hi Akshay,"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWhatsInYourMind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:fontFamily="sans-serif-black"
+        android:text="What's on your mind?"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNamePost" />
+
+    <EditText
+        android:id="@+id/writeStatus"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/sp_25"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@drawable/write_bg"
+        android:gravity="center_vertical"
+        android:hint="Write something..."
+        android:paddingStart="@dimen/dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWhatsInYourMind" />
+
+    <TextView
+        android:id="@+id/tvPhotosPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_25"
+        android:drawableStart="@drawable/ic_iconfinder_3298594_asset_image_photo_picture_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:fontFamily="sans-serif-black"
+        android:text="Photo/Video"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writeStatus" />
+
+    <TextView
+        android:id="@+id/tvTagePeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_iconfinder_299085_profile_group_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:fontFamily="sans-serif-black"
+        android:text="Tag People"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhotosPost" />
+
+    <TextView
+        android:id="@+id/tvFeelingPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_iconfinder_4927962_emoji_emotion_face_feeling_smile_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:fontFamily="sans-serif-black"
+        android:text="Feeling/Activity"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTagePeople" />
+
+    <TextView
+        android:id="@+id/tvCheckIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_iconfinder_2701087_checkin_friends_location_near_pin_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:fontFamily="sans-serif-black"
+        android:text="Check In"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFeelingPost" />
+
+    <TextView
+        android:id="@+id/tvPSeeMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:drawableStart="@drawable/ic_iconfinder_7124112_circle_dots_horizontal_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:fontFamily="sans-serif-black"
+        android:text="See More"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCheckIn" />
+
+    <TextView
+        android:id="@+id/SeeMoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:text="Reel"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sp_20"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/CheckInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:text="Story"
+        android:textColor="@color/grey"
+
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SeeMoreButton" />
+
+    <TextView
+        android:id="@+id/EmotionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:drawablePadding="@dimen/dp_10"
+        android:text="Post"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/CheckInButton" />
+
+
+    <View
+        android:id="@+id/viewOne"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/EmotionsButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
