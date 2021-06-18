@@ -25,7 +25,6 @@ class AddFriendFragment : Fragment() {
     }
 
     private fun buildData() {
-
     }
 
     companion object {

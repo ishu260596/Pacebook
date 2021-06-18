@@ -4,7 +4,13 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
 }
+apply plugin: "kotlin-noarg"
 apply plugin: 'com.google.gms.google-services'
+
+noArg {
+    annotation("com.my.Annotation")
+    invokeInitializers = true
+}
 
 android {
     compileSdkVersion 30
@@ -120,5 +126,8 @@ dependencies {
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:7.2.0'
 
 }
